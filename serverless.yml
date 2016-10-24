@@ -1,0 +1,42 @@
+service: graphql-service
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  profile: your-aws-profile-name
+  iamRoleStatements:
+    $ref: ./iamRoleStatements.json
+
+package:
+  exclude:
+    - loadLocally
+
+functions:
+  graphql:
+    handler: handler.graphql
+    memory: 1024
+    timeout: 300
+    events:
+      - http:
+          path: graphql
+          method: post
+          cors: true
+
+resources:
+  Resources:
+    $ref: ./cloudFormation.json
+
+custom:
+  defaultRegion: us-east-1
+  region: ${opt:region, self:custom.defaultRegion}
+  stage: ${opt:stage}
+  writeEnvVars:
+    SERVICE_NAME: ${self:service}
+    STAGE: ${self:custom.stage}
+    REGION: ${self:custom.region}
+    ELASTIC_SEARCH_ENDPOINT: ${opt:elasticSearchEndpoint}
+    ELASTIC_SEARCH_VERSION: "2.3"
+    ELASTIC_SEARCH_REGION: ${self:custom.writeEnvVars.REGION}
+
+plugins:
+  - serverless-plugin-write-env-vars

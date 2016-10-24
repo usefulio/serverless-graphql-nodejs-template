@@ -1,0 +1,19 @@
+{
+  "name": "graphql-service",
+  "version": "1.0.0",
+  "description": "Serverless wrapper for a serverless graphql endpoint that talks to ElasticSearch",
+  "main": "handler.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/usefulio/graphql-aws-node-template.git"
+  },
+  "author": "Useful IO",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "serverless-plugin-write-env-vars": "^1.0.1"
+  }
+}

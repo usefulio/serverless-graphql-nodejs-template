@@ -1,0 +1,6 @@
+#!/bin/bash
+AWS_PROFILE=usefulio
+unzip -o -qq ./.serverless/graphql-service.zip -d ./.serverless
+mv ./.serverless/.env ./.env
+echo "When node starts, 'gql' will be the handler function of the service."
+node -e "var gql = require(\"./\").graphql; const repl = require('repl'); repl.start('> ').context.gql = gql;"

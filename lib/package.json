@@ -1,0 +1,25 @@
+{
+  "name": "@useful/graphql-lib-example",
+  "version": "1.0.0",
+  "description": "Library for fetching metrics via GraphQL.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/usefulio/graphql-aws-node-template.git"
+  },
+  "author": "Useful IO",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/usefulio/graphql-aws-node-template/issues"
+  },
+  "homepage": "https://github.com/usefulio/graphql-aws-node-template#readme",
+  "dependencies": {
+    "aws-sdk": "^2.6.6",
+    "bluebird": "^3.4.6",
+    "dynamodb-data-types": "^3.0.0",
+    "elasticsearch": "^11.0.1",
+    "graphql": "^0.7.2",
+    "http-aws-es": "^1.1.3",
+    "lodash": "^4.16.3"
+  }
+}
