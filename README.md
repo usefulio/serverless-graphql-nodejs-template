@@ -29,6 +29,9 @@ run the `./loadLocally` bash script to get a node repl where
 as a quick way to catch syntax errors, etc and play with your code
 without having to wait for it to deploy to AWS.
 
+You'll need to change the first line of the file `AWS_PROFILE=usefulio`
+to be `AWS_PROFILE=your-aws-profile` that you are using to deploy.
+
 Deployment
 ==========
 
